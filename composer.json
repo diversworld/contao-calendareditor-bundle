@@ -1,5 +1,5 @@
 {
-  "name": "mindbird/contao-calendar-eeditor",
+  "name": "mindbird/contao-calendar-editor",
   "description": "Contao Extension to create and edit calendar events in the frontend.",
   "keywords": ["contao", 
 			   "calendar", 
