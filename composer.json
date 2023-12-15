@@ -1,5 +1,5 @@
 {
-  "name": "danielgausi/contao-calendareditor-bundle",
+  "name": "wusch/contao-calendareditor-bundle",
   "description": "Contao Extension to create and edit calendar events in the frontend.",
   "keywords": ["contao", 
 			   "calendar", 
