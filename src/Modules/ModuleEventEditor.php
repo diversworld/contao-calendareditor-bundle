@@ -60,23 +60,23 @@ class ModuleEventEditor extends Events
         return $this->generateEventUrl($event);
     }
 
-    public function addTinyMCE($str): void
+    public function addTinyMCE($configuration): void
     {
-        if (!empty($str)) {
+        if (!empty($configuration)) {
             $this->rteFields = 'ctrl_details,ctrl_teaser,teaser';
             // Fallback to English if the user language is not supported
             $this->language = 'en';
 
-            $strFile = sprintf('%s/vendor/danielgausi/contao-calendareditor-bundle/src/Resources/contao/tinyMCE/%s.php', TL_ROOT, $str);
+            $file = sprintf('%s/vendor/mindbird/contao-calendar-editor/src/Resources/contao/tinyMCE/%s.php', TL_ROOT, $configuration);
             if (file_exists(TL_ROOT . '/assets/tinymce4/js/langs/' . $GLOBALS['TL_LANGUAGE'] . '.js')) {
                 $this->language = $GLOBALS['TL_LANGUAGE'];
             }
 
-            if (!file_exists($strFile)) {
-                echo(sprintf('Cannot find rich text editor configuration file "%s"', $strFile));
+            if (!file_exists($file)) {
+                echo(sprintf('Cannot find rich text editor configuration file "%s"', $file));
             } else {
                 ob_start();
-                include($strFile);
+                include($file);
                 $GLOBALS['TL_HEAD'][] = ob_get_contents();
                 ob_end_clean();
             }
