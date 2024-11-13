@@ -2,13 +2,13 @@
 
 namespace DanielGausi\CalendarEditorBundle\Modules;
 
-use BackendTemplate;
+use Contao\BackendTemplate;
 use CalendarEventsModel;
-use CalendarModel;
-use Config;
+use Contao\CalendarModel;
+use Contao\Config;
 use Contao\StringUtil;
-use ModuleEventlist;
-use PageModel;
+use Contao\ModuleEventlist;
+use Contao\PageModel;
 
 class ModuleHiddenEventlist extends ModuleEventlist
 {

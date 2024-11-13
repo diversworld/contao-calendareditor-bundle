@@ -259,7 +259,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_dateImageSRC'] = array
 //caledit_dateIncludeCSS, caledit_dateIncludeCSSTheme, 
 //caledit_dateImage, caledit_dateImageSRC'
 
-
+use Contao\Backend;
 
 
 class calendar_eventeditor extends Backend

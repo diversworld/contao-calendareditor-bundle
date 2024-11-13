@@ -3,7 +3,7 @@
 namespace DanielGausi\CalendarEditorBundle\Models;
 
 use Contao\CalendarEventsModel;
-use Date;
+use Contao\Date;
 
 class CalendarEventsModelEdit extends \CalendarEventsModel
 {

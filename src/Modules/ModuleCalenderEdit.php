@@ -2,14 +2,14 @@
 
 namespace DanielGausi\CalendarEditorBundle\Modules;
 
-use BackendTemplate;
+use Contao\BackendTemplate;
 use Contao\Date;
 use Contao\PageModel;
 use Contao\StringUtil;
 use Contao\System;
 use DanielGausi\CalendarEditorBundle\Models\CalendarModelEdit;
 use DanielGausi\CalendarEditorBundle\Services\CheckAuthService;
-use ModuleCalendar;
+use Contao\ModuleCalendar;
 
 class ModuleCalenderEdit extends ModuleCalendar
 {

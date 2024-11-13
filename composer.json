@@ -14,10 +14,10 @@
 	
 	"require": {
 		"php": "^8.1",
-		"contao/core-bundle": "~4.13" ,
-		"contao/calendar-bundle": "~4.13",
+		"contao/core-bundle": "~4.13 || ~5.0",
+		"contao/calendar-bundle": "~4.13 || ~5.0",
 		"menatwork/contao-multicolumnwizard-bundle": "^3.0",
-		"hofff/contao-calendarfield": "^4.0"
+		"hofff/contao-calendarfield": "dev-contao5"
 	},
 	"autoload": {
 		"psr-4": {

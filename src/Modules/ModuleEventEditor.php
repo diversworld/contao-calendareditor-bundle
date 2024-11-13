@@ -2,7 +2,7 @@
 
 namespace DanielGausi\CalendarEditorBundle\Modules;
 
-use BackendTemplate;
+use Contao\BackendTemplate;
 use Contao\Email;
 use Contao\Input;
 use Contao\StringUtil;
@@ -11,9 +11,9 @@ use ContentModel;
 use DanielGausi\CalendarEditorBundle\Models\CalendarEventsModelEdit;
 use DanielGausi\CalendarEditorBundle\Models\CalendarModelEdit;
 use DanielGausi\CalendarEditorBundle\Services\CheckAuthService;
-use Date;
-use Events;
-use FrontendTemplate;
+use Contao\Date;
+use Contao\Events;
+use Contao\FrontendTemplate;
 
 class ModuleEventEditor extends Events
 {
