@@ -7,13 +7,14 @@ use Contao\Email;
 use Contao\Input;
 use Contao\StringUtil;
 use Contao\System;
-use ContentModel;
+use Contao\ContentModel;
 use DanielGausi\CalendarEditorBundle\Models\CalendarEventsModelEdit;
 use DanielGausi\CalendarEditorBundle\Models\CalendarModelEdit;
 use DanielGausi\CalendarEditorBundle\Services\CheckAuthService;
 use Contao\Date;
 use Contao\Events;
 use Contao\FrontendTemplate;
+use Contao\FrontendUser;
 
 class ModuleEventEditor extends Events
 {
@@ -29,27 +30,32 @@ class ModuleEventEditor extends Events
     /**
      * generate Module
      */
-    public function generate()
-    {
-        if (TL_MODE == 'BE') {
-            $objTemplate = new BackendTemplate('be_wildcard');
-            $objTemplate->wildcard = '### EVENT EDITOR ###';
-            $objTemplate->title = $this->headline;
-            $objTemplate->id = $this->id;
-            $objTemplate->link = $this->name;
-            $objTemplate->href = 'contao/main.php?do=themes&amp;table=tl_module&amp;act=edit&amp;id=' . $this->id;
-            return $objTemplate->parse();
-        }
+	public function generate()
+	{
+		$request = System::getContainer()->get('request_stack')->getCurrentRequest();
+		//if (TL_MODE == 'BE') {
+		if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request))
+		{
+			$objTemplate = new BackendTemplate('be_wildcard');
+			$objTemplate->wildcard = '### EVENT EDITOR ###';
+			$objTemplate->title = $this->headline;
+			$objTemplate->id = $this->id;
+			$objTemplate->link = $this->name;
+			//$objTemplate->href = 'contao/main.php?do=themes&amp;table=tl_module&amp;act=edit&amp;id=' . $this->id;
+			$objTemplate->href = StringUtil::specialcharsUrl(System::getContainer()->get('router')->generate('contao_backend', array('do'=>'themes', 'table'=>'tl_module', 'act'=>'edit', 'id'=>$this->id)));
 
-        $this->cal_calendar = $this->sortOutProtected(StringUtil::deserialize($this->cal_calendar));
+			return $objTemplate->parse();
+		}
 
-        // Return if there are no calendars
-        if (!is_array($this->cal_calendar) || count($this->cal_calendar) < 1) {
-            return '';
-        }
+		$this->cal_calendar = $this->sortOutProtected(StringUtil::deserialize($this->cal_calendar));
 
-        return parent::generate();
-    }
+		// Return if there are no calendars
+		if (!is_array($this->cal_calendar) || count($this->cal_calendar) < 1) {
+			return '';
+		}
+
+		return parent::generate();
+	}
 
 
     /**

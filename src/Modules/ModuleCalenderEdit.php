@@ -10,6 +10,7 @@ use Contao\System;
 use DanielGausi\CalendarEditorBundle\Models\CalendarModelEdit;
 use DanielGausi\CalendarEditorBundle\Services\CheckAuthService;
 use Contao\ModuleCalendar;
+use Contao\FrontendUser;
 
 class ModuleCalenderEdit extends ModuleCalendar
 {
@@ -162,23 +163,27 @@ class ModuleCalenderEdit extends ModuleCalendar
 
 		return $arrDays;
 	}
-	
+
 	public function generate(): string
-    {
-        if (TL_MODE == 'BE') {
-            $objTemplate = new BackendTemplate('be_wildcard');
+	{
+		$request = System::getContainer()->get('request_stack')->getCurrentRequest();
+		//if (TL_MODE == 'BE') {
+		if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request))
+		{
+			$objTemplate = new BackendTemplate('be_wildcard');
 
-            $objTemplate->wildcard = '### CALENDAR WITH FE EDITING ###';
-            $objTemplate->title = $this->headline;
-            $objTemplate->id = $this->id;
-            $objTemplate->link = $this->name;
-            $objTemplate->href = 'contao/main.php?do=themes&amp;table=tl_module&amp;act=edit&amp;id=' . $this->id;
+			$objTemplate->wildcard = '### CALENDAR WITH FE EDITING ###';
+			$objTemplate->title = $this->headline;
+			$objTemplate->id = $this->id;
+			$objTemplate->link = $this->name;
+			//$objTemplate->href = 'contao/main.php?do=themes&amp;table=tl_module&amp;act=edit&amp;id=' . $this->id;
+			$objTemplate->href = StringUtil::specialcharsUrl(System::getContainer()->get('router')->generate('contao_backend', array('do'=>'themes', 'table'=>'tl_module', 'act'=>'edit', 'id'=>$this->id)));
 
-            return $objTemplate->parse();
-        }       
+			return $objTemplate->parse();
+		}
 
-        return parent::generate();
-    }
+		return parent::generate();
+	}
 
 
 	/**

@@ -10,6 +10,7 @@ use Contao\System;
 use DanielGausi\CalendarEditorBundle\Models\CalendarModelEdit;
 use DanielGausi\CalendarEditorBundle\Services\CheckAuthService;
 use Contao\FrontendTemplate;
+use Contao\FrontendUser;
 
 class ModuleEventReaderEdit extends Events
 {
@@ -26,23 +27,26 @@ class ModuleEventReaderEdit extends Events
 	 */
 	public function generate()
 	{
-		if (TL_MODE == 'BE') {
+		//if (TL_MODE == 'BE') {
+		if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request))
+		{
 			$objTemplate = new BackendTemplate('be_wildcard');
 
 			$objTemplate->wildcard = '### EVENT READER EDIT LINK ###';
 			$objTemplate->title = $this->headline;
 			$objTemplate->id = $this->id;
 			$objTemplate->link = $this->name;
-			$objTemplate->href = 'contao/main.php?do=themes&amp;table=tl_module&amp;table=tl_module&amp;act=edit&amp;id=' . $this->id;
+			//$objTemplate->href = 'contao/main.php?do=themes&amp;table=tl_module&amp;table=tl_module&amp;act=edit&amp;id=' . $this->id;
+			$objTemplate->href = StringUtil::specialcharsUrl(System::getContainer()->get('router')->generate('contao_backend', array('do'=>'themes', 'table'=>'tl_module', 'act'=>'edit', 'id'=>$this->id)));
 
 			return $objTemplate->parse();
 		}
-		
+
 		// Return if no event has been specified
 		if (!Input::get('events')) {
 			return '';
 		}
-		
+
 		$this->cal_calendar = $this->sortOutProtected(StringUtil::deserialize($this->cal_calendar));
 
 		// Return if there are no calendars
