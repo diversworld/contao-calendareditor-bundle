@@ -271,7 +271,13 @@ class calendar_eventeditor extends Backend
 	public function __construct()
 	{
 		parent::__construct();
-		$this->import('BackendUser', 'User');
+		//$this->import('BackendUser', 'User');
+		$user = BackendUser::getInstance();
+
+		if (!$user->isAdmin && !is_array($user->calendars))
+		{
+			return array();
+		}
 	}
 	
 	/**
