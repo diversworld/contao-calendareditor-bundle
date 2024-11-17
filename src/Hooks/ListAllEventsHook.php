@@ -3,7 +3,7 @@
 namespace DanielGausi\CalendarEditorBundle\Hooks;
 
 use Contao\System;
-use DanielGausi\CalendarEditorBundle\Models\CalendarModelEdit;
+use DanielGausi\CalendarEditorBundle\Model\CalendarModelEdit;
 use DanielGausi\CalendarEditorBundle\Services\CheckAuthService;
 use Contao\Frontend;
 

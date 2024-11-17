@@ -1,6 +1,6 @@
 <?php
 
-namespace DanielGausi\CalendarEditorBundle\Modules;
+namespace DanielGausi\CalendarEditorBundle\Module;
 
 use Contao\BackendTemplate;
 use Contao\Email;
@@ -8,8 +8,8 @@ use Contao\Input;
 use Contao\StringUtil;
 use Contao\System;
 use Contao\ContentModel;
-use DanielGausi\CalendarEditorBundle\Models\CalendarEventsModelEdit;
-use DanielGausi\CalendarEditorBundle\Models\CalendarModelEdit;
+use DanielGausi\CalendarEditorBundle\Model\CalendarEventsModelEdit;
+use DanielGausi\CalendarEditorBundle\Model\CalendarModelEdit;
 use DanielGausi\CalendarEditorBundle\Services\CheckAuthService;
 use Contao\Date;
 use Contao\Events;

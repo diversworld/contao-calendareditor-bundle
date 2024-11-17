@@ -1,11 +1,11 @@
 <?php
 
-namespace DanielGausi\CalendarEditorBundle\Models;
+namespace DanielGausi\CalendarEditorBundle\Model;
 
 use Contao\CalendarEventsModel;
 use Contao\Date;
 
-class CalendarEventsModelEdit extends \CalendarEventsModel
+class CalendarEventsModelEdit extends CalendarEventsModel
 {
     public static function findByIdOrAlias($ids, array $options = []): ?CalendarEventsModel
     {

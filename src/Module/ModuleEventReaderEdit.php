@@ -1,13 +1,13 @@
 <?php 
 
-namespace DanielGausi\CalendarEditorBundle\Modules;
+namespace DanielGausi\CalendarEditorBundle\Module;
 
 use Contao\BackendTemplate;
 use Contao\Events;
 use Contao\Input;
 use Contao\StringUtil;
 use Contao\System;
-use DanielGausi\CalendarEditorBundle\Models\CalendarModelEdit;
+use DanielGausi\CalendarEditorBundle\Model\CalendarModelEdit;
 use DanielGausi\CalendarEditorBundle\Services\CheckAuthService;
 use Contao\FrontendTemplate;
 use Contao\FrontendUser;

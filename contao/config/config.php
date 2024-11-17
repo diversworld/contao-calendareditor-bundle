@@ -21,10 +21,10 @@
  */
 
 use DanielGausi\CalendarEditorBundle\Hooks\ListAllEventsHook;
-use DanielGausi\CalendarEditorBundle\Modules\ModuleCalenderEdit;
-use DanielGausi\CalendarEditorBundle\Modules\ModuleEventEditor;
-use DanielGausi\CalendarEditorBundle\Modules\ModuleEventReaderEdit;
-use DanielGausi\CalendarEditorBundle\Modules\ModuleHiddenEventlist;
+use DanielGausi\CalendarEditorBundle\Module\ModuleCalenderEdit;
+use DanielGausi\CalendarEditorBundle\Module\ModuleEventEditor;
+use DanielGausi\CalendarEditorBundle\Module\ModuleEventReaderEdit;
+use DanielGausi\CalendarEditorBundle\Module\ModuleHiddenEventlist;
 
 $GLOBALS['FE_MOD']['events']['calendarEdit']        = ModuleCalenderEdit::class;
 $GLOBALS['FE_MOD']['events']['EventEditor']         = ModuleEventEditor::class;

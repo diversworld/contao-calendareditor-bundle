@@ -1,6 +1,6 @@
 <?php
 
-namespace DanielGausi\CalendarEditorBundle\Models;
+namespace DanielGausi\CalendarEditorBundle\Model;
 
 use Contao\CalendarModel;
 use function is_array;
