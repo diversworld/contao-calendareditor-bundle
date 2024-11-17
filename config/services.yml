@@ -3,6 +3,7 @@ services:
     autoconfigure: true
     autowire: true
 
+
   _instanceof:
     Contao\CoreBundle\Framework\FrameworkAwareInterface:
       calls:

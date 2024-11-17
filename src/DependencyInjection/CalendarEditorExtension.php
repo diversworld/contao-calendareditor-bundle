@@ -1,5 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of Contao.
+ *
+ * (c) Leo Feyer
+ *
+ * @license LGPL-3.0-or-later
+ */
+
 namespace DanielGausi\CalendarEditorBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
@@ -12,12 +22,9 @@ class CalendarEditorExtension extends Extension
     /**
      * {@inheritdoc}
      */
-    public function load(array $mergedConfig, ContainerBuilder $container): void
-    {
-        $loader = new YamlFileLoader(
-            $container,
-            new FileLocator(__DIR__ . '/../../config')
-        );
-        $loader->load('services.yml');
-    }
+	public function load(array $configs, ContainerBuilder $container): void
+	{
+		$loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../../config'));
+		$loader->load('services.yaml');
+	}
 }
