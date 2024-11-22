@@ -89,7 +89,7 @@ class CalendarEventsEditor extends Backend
 		$arrConfigs = array();
 
 		//$arrFiles = scan(TL_ROOT . '/system/config/');
-		$arrFiles = scan(TL_ROOT.'/vendor/mindbird/contao-calendar-editor/src/Resources/contao/tinyMCE/');// . '/system/config/');
+		$arrFiles = scan('/vendor/mindbird/contao-calendar-editor/src/Resources/contao/tinyMCE/');// . '/system/config/');
 
 		foreach( $arrFiles as $file ) {
 			//if (substr($file, 0, 4) == 'tiny') {

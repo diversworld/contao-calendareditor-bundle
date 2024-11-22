@@ -3,15 +3,7 @@ services:
     autoconfigure: true
     autowire: true
     bind:
-      $projectDir: '%kernel.project_dir%'
-
-  DanielGausi\CalendarEditorBundle\:
-    resource: ../src/*
-
-  _instanceof:
-    Contao\CoreBundle\Framework\FrameworkAwareInterface:
-      calls:
-        - [ setFramework, [ '@contao.framework' ] ]
+      projectDir: '%kernel.project_dir%'
 
   caledit.service.auth:
       class: DanielGausi\CalendarEditorBundle\Services\CheckAuthService
