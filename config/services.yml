@@ -13,10 +13,6 @@ services:
       calls:
         - [ setFramework, [ '@contao.framework' ] ]
 
-  Symfony\Bundle\FrameworkBundle\Controller\AbstractController:
-      calls:
-        - [ setContainer, [ '@Psr\Container\ContainerInterface' ] ]
-
   Symfony\Component\DependencyInjection\ContainerAwareInterface:
       calls:
         - [ setContainer, [ '@service_container' ] ]
