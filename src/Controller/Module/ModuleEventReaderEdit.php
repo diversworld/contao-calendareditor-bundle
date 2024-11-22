@@ -1,6 +1,6 @@
 <?php 
 
-namespace DanielGausi\CalendarEditorBundle\Modules;
+namespace DanielGausi\CalendarEditorBundle\Controller\Module;
 
 use Contao\BackendTemplate;
 use Contao\Events;
