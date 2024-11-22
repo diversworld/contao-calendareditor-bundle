@@ -16,7 +16,7 @@ class ModuleCalenderEdit extends ModuleCalendar
 	// variable which indicates whether events can be added or not (on elapsed days)
 	protected bool $allowElapsedEvents;
 	protected bool $allowEditEvents;
-		
+
 	
 	public function getHolidayCalendarIDs($cals): array
     {
@@ -35,7 +35,8 @@ class ModuleCalenderEdit extends ModuleCalendar
     {
         /** @var CheckAuthService $checkAuthService */
         $checkAuthService = System::getContainer()->get('caledit.service.auth');
-		$this->import('FrontendUser', 'User');			
+		$this->import('FrontendUser', 'User');
+
 		$this->allowElapsedEvents = false;
 		$this->allowEditEvents = false;
 				
