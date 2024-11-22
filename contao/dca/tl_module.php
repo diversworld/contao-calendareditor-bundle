@@ -27,7 +27,7 @@ use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 
 $GLOBALS['TL_DCA']['tl_module']['palettes']['EventHiddenList']     = $GLOBALS['TL_DCA']['tl_module']['palettes']['eventlist'];
- $GLOBALS['TL_DCA']['tl_module']['palettes']['EventEditor']         
+$GLOBALS['TL_DCA']['tl_module']['palettes']['EventEditor']
  = '{title_legend},name,headline,type;{redirect_legend},jumpTo;'
    .'{config_legend},cal_calendar,caledit_mandatoryfields,caledit_alternateCSSLabel,caledit_usePredefinedCss;'
    .'{caledit_setting_publish},caledit_allowPublish,caledit_allowDelete,caledit_allowClone,caledit_sendMail;'

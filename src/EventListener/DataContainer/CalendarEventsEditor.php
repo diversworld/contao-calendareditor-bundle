@@ -7,8 +7,6 @@ namespace DanielGausi\CalendarEditorBundle\EventListener\DataContainer;
 
 use Contao\Backend;
 use Contao\BackendUser;
-use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
-use Contao\System;
 
 
 class CalendarEventsEditor extends Backend
