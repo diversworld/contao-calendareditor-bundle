@@ -18,10 +18,10 @@
 
 
 use DanielGausi\CalendarEditorBundle\Hooks\ListAllEventsHook;
-use DanielGausi\CalendarEditorBundle\Module\ModuleCalenderEdit;
-use DanielGausi\CalendarEditorBundle\Module\ModuleEventEditor;
-use DanielGausi\CalendarEditorBundle\Module\ModuleEventReaderEdit;
-use DanielGausi\CalendarEditorBundle\Module\ModuleHiddenEventlist;
+use DanielGausi\CalendarEditorBundle\Controller\Module\ModuleCalenderEdit;
+use DanielGausi\CalendarEditorBundle\Controller\Module\ModuleEventEditor;
+use DanielGausi\CalendarEditorBundle\Controller\Module\ModuleEventReaderEdit;
+use DanielGausi\CalendarEditorBundle\Controller\Module\ModuleHiddenEventlist;
 
 // Front end modules
 $GLOBALS['FE_MOD']['events'] = array
