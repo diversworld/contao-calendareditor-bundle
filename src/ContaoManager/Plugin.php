@@ -19,24 +19,25 @@
  
 namespace DanielGausi\CalendarEditorBundle\ContaoManager;
 
-
+use DanielGausi\CalendarEditorBundle\CalendarEditorBundle;
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\CalendarBundle\ContaoCalendarBundle;
-
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
-use DanielGausi\CalendarEditorBundle\CalendarEditorBundle;
+use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
 use MenAtWork\MultiColumnWizardBundle\MultiColumnWizardBundle;
+use Symfony\Component\Config\Loader\LoaderResolverInterface;
+use Symfony\Component\HttpKernel\KernelInterface;
 
-class Plugin implements BundlePluginInterface
+class Plugin implements BundlePluginInterface, RoutingPluginInterface
 {
     /**
      * {@inheritdoc}
      */
     public function getBundles(ParserInterface $parser)
     {
-        return [			
+        return [
             BundleConfig::create(CalendarEditorBundle::class)
                 ->setLoadAfter(
 					[ ContaoCoreBundle::class,
@@ -47,4 +48,11 @@ class Plugin implements BundlePluginInterface
 			->setReplace(['calendar']),
         ];
     }
+
+	public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
+	{
+		$file = __DIR__.'/../../config/routes.yml';
+
+		return $resolver->resolve($file)->load($file);
+	}
 }
