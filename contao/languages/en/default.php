@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 
 /**
@@ -79,4 +79,3 @@ $GLOBALS['TL_LANG']['MSC']['caledit_deleteWarning'] = "You are about to delete a
 
 
 
-?>

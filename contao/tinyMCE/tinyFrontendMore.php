@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 /**
  * This file is part of 
@@ -22,7 +22,7 @@
  * http://tinymce.moxiecode.com for more information.
  */
 
-
+/*
 if ($GLOBALS['TL_CONFIG']['useRTE']): ?>
 
 <script src="<?php echo TL_ASSETS_URL; ?>assets/tinymce4/js/tinymce.min.js"></script>
@@ -44,4 +44,4 @@ if ($GLOBALS['TL_CONFIG']['useRTE']): ?>
 
 });</script>
 
-<?php endif; ?>
+<?php endif; ?>*/

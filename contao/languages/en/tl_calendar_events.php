@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 /**
  * Miscellaneous
@@ -9,4 +9,3 @@ $GLOBALS['TL_LANG']['tl_calendar_events']['disable_editing'] = array('Disable Fr
 
 $GLOBALS['TL_LANG']['tl_calendar_events']['edit_legend'] = 'Frontend editing';
 
-?>

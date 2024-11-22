@@ -1,5 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
-
+<?php
  
 $GLOBALS['TL_LANG']['tl_module']['caledit_add_jumpTo']     = array('Redirect page for adding events', 'Please choose the page to which the FE user will be redirected when adding an event.');
 $GLOBALS['TL_LANG']['tl_module']['caledit_template']       = array('Event editor template (edit)', 'Select the template for the event editor when editing an event.');
@@ -56,4 +55,3 @@ $GLOBALS['TL_LANG']['tl_module']['caledit_dateDirection_ref']['ltToday'] = 'Only
 $GLOBALS['TL_LANG']['tl_module']['caledit_dateDirection_ref']['leToday'] = 'Only dates in the past (including today)';
 $GLOBALS['TL_LANG']['tl_module']['caledit_dateDirection_ref']['geToday'] = 'Only dates in the future (including today)';
 $GLOBALS['TL_LANG']['tl_module']['caledit_dateDirection_ref']['gtToday'] = 'Only dates in the future (excluding today)';
-?>
