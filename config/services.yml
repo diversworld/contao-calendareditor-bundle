@@ -5,7 +5,7 @@ services:
     bind:
       $projectDir: '%kernel.project_dir%'
 
-  DanielGausi\CalendarEditorBundle:
+  DanielGausi\CalendarEditorBundle\:
     resource: ../src/*
 
   _instanceof:
@@ -13,6 +13,6 @@ services:
       calls:
         - [ setFramework, [ '@contao.framework' ] ]
 
-  Symfony\Component\DependencyInjection\ContainerAwareInterface:
-      calls:
-        - [ setContainer, [ '@service_container' ] ]
+  caledit.service.auth:
+      class: DanielGausi\CalendarEditorBundle\Services\CheckAuthService
+      public: true
