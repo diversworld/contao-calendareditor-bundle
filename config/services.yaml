@@ -5,23 +5,22 @@ services:
     bind:
       $projectDir: '%kernel.project_dir%'
 
-DanielGausi\CalendarEditorBundle:
-      resource: ../src/
-      exclude: ../src/{Event,Model,DependencyInjection}
+  DanielGausi\CalendarEditorBundle:
+      resource: ../src/*
 
-_instanceof:
+  _instanceof:
     Contao\CoreBundle\Framework\FrameworkAwareInterface:
       calls:
         - [ setFramework, [ '@contao.framework' ] ]
 
-Symfony\Bundle\FrameworkBundle\Controller\AbstractController:
+    Symfony\Bundle\FrameworkBundle\Controller\AbstractController:
       calls:
         - [ setContainer, [ '@Psr\Container\ContainerInterface' ] ]
 
-Symfony\Component\DependencyInjection\ContainerAwareInterface:
+    Symfony\Component\DependencyInjection\ContainerAwareInterface:
       calls:
         - [ setContainer, [ '@service_container' ] ]
 
-caledit.service.auth:
-    class: DanielGausi\CalendarEditorBundle\Services\CheckAuthService
-    public: true
+    caledit.service.auth:
+        class: DanielGausi\CalendarEditorBundle\Services\CheckAuthService
+        public: true
