@@ -60,14 +60,14 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_allowPublish'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['caledit_allowPublish'],
 	'inputType'               => 'checkbox',
 	'eval'                    => array('tl_class'=>'w50'),
-	'sql'					  => "char(1) COLLATE ascii_bin NOT NULL default ''"
+	'sql'					  => "char(1) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_allowDelete'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['caledit_allowDelete'],
 	'inputType'               => 'checkbox',
 	'eval'                    => array('tl_class'=>'w50'),
-	'sql'					  => "char(1) COLLATE ascii_bin NOT NULL default ''"
+	'sql'					  => "char(1) NOT NULL default ''"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_allowClone'] = array
@@ -75,7 +75,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_allowClone'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['caledit_allowClone'],
 	'inputType'               => 'checkbox',
 	'eval'                    => array('tl_class'=>'w50'),
-	'sql'					  => "char(1) COLLATE ascii_bin NOT NULL default ''"
+	'sql'					  => "char(1) NOT NULL default ''"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_sendMail'] = array
@@ -83,32 +83,32 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_sendMail'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['caledit_sendMail'],
 	'inputType'               => 'checkbox',
 	'eval'                    => array('submitOnChange'=>true, 'tl_class'=>'clr m12 w50'),
-	'sql'					  => "char(1) COLLATE ascii_bin NOT NULL default ''"
+	'sql'					  => "char(1) NOT NULL default ''"
 );
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_mailRecipient'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['caledit_mailRecipient'],
 	'inputType'               => 'text',
 	'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
-	'sql'					  => "varchar(255) COLLATE ascii_bin NOT NULL default ''"
+	'sql'					  => "varchar(255) NOT NULL default ''"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_mandatoryfields'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['caledit_mandatoryfields'],
 	'inputType'               => 'checkbox',
-    'options'                 => array('starttime','location','teaser', 'details', 'css'),
-    'reference'               => &$GLOBALS['TL_LANG']['tl_caledit_mandatoryfields'],
+	'options'                 => array('starttime','location','teaser', 'details', 'css'),
+	'reference'               => &$GLOBALS['TL_LANG']['tl_caledit_mandatoryfields'],
 	'eval'                    => array('multiple'=>true, 'tl_class'=>'w100'),
 	'sql'					  => "blob NULL"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_add_jumpTo'] = array
 (
- 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['caledit_add_jumpTo'],
- 	'inputType'               => 'pageTree',
- 	'eval'                    => array('fieldType'=>'radio'),
-	'sql'					  => "int(10) unsigned COLLATE ascii_bin NOT NULL default '0'"
+	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['caledit_add_jumpTo'],
+	'inputType'               => 'pageTree',
+	'eval'                    => array('fieldType'=>'radio'),
+	'sql'					  => "int(10) unsigned NOT NULL default '0'"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_template'] = array
@@ -119,7 +119,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_template'] = array
 	'inputType'               => 'select',
 	'options_callback'        => array('calendar_eventeditor', 'getEventEditTemplates'),
 	'eval'                    => array ('tl_class'=>'clr w50'),
-	'sql'					  => "varchar(32) COLLATE ascii_bin NOT NULL default ''"
+	'sql'					  => "varchar(32) NOT NULL default ''"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_clone_template'] = array
@@ -130,7 +130,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_clone_template'] = array
 	'inputType'               => 'select',
 	'options_callback'        => array('calendar_eventeditor', 'getEventEditTemplates'),
 	'eval'                    => array ('tl_class'=>'w50'),
-	'sql'					  => "varchar(32) COLLATE ascii_bin NOT NULL default ''"
+	'sql'					  => "varchar(32) NOT NULL default ''"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_delete_template'] = array
@@ -141,7 +141,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_delete_template'] = array
 	'inputType'               => 'select',
 	'options_callback'        => array('calendar_eventeditor', 'getEventEditTemplates'),
 	'eval'                    => array ('tl_class'=>'w50'),
-	'sql'					  => "varchar(32) COLLATE ascii_bin NOT NULL default ''"
+	'sql'					  => "varchar(32) NOT NULL default ''"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_tinMCEtemplate'] = array
@@ -152,7 +152,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_tinMCEtemplate'] = array
 	'inputType'               => 'select',
 	'options_callback'        => array('calendar_eventeditor', 'getConfigFiles'),
 	'eval'			  		  => array('includeBlankOption'=>true, 'tl_class'=>'w50'),
-	'sql'					  => "varchar(32) COLLATE ascii_bin NOT NULL default ''"
+	'sql'					  => "varchar(32) NOT NULL default ''"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_alternateCSSLabel'] = array
@@ -160,7 +160,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_alternateCSSLabel'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['caledit_alternateCSSLabel'],
 	'inputType'               => 'text',
 	'eval'                    => array('maxlength'=>64, 'tl_class'=>'clr w50'),
-	'sql'					  => "varchar(64) COLLATE ascii_bin NOT NULL default ''"	
+	'sql'					  => "varchar(64) NOT NULL default ''"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_usePredefinedCss'] = array
@@ -168,19 +168,19 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_usePredefinedCss'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['caledit_usePredefinedCss'],
 	'inputType'               => 'checkbox',
 	'eval'                    => array('submitOnChange'=>true, 'tl_class'=>'clr w50'),
-	'sql'					  => "char(1) COLLATE ascii_bin NOT NULL default ''"
+	'sql'					  => "char(1) NOT NULL default ''"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_cssValues'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['caledit_cssValues'],
-	'inputType'               => 'multiColumnWizard',	
+	'inputType'               => 'multiColumnWizard',
 	'eval'                    => array
-      (
-        'tl_class' => 'w50',
-		'columnsCallback' => array('calendar_eventeditor', 'getCSSValues')        
-       ),
-	 'sql'					  => "text NULL"
+	(
+		'tl_class' => 'w50',
+		'columnsCallback' => array('calendar_eventeditor', 'getCSSValues')
+	),
+	'sql'					  => "text NULL"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_showDeleteLink'] = array
@@ -188,7 +188,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_showDeleteLink'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['caledit_showDeleteLink'],
 	'inputType'               => 'checkbox',
 	'eval'                    => array('tl_class'=>'w50'),
-	'sql'					  => "char(1) COLLATE ascii_bin NOT NULL default ''"
+	'sql'					  => "char(1) NOT NULL default ''"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_showCloneLink'] = array
@@ -196,7 +196,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_showCloneLink'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['caledit_showCloneLink'],
 	'inputType'               => 'checkbox',
 	'eval'                    => array('tl_class'=>'w50'),
-	'sql'					  => "char(1) COLLATE ascii_bin NOT NULL default ''"
+	'sql'					  => "char(1) NOT NULL default ''"
 );
 
 
@@ -218,7 +218,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_useDatePicker'] = array
 	'inputType'               => 'checkbox',
 	'default'				  => '1',
 	'eval'                    => array('submitOnChange'=>true, 'tl_class'=>'clr m12 w50'),
-	'sql'					  => "char(1) COLLATE ascii_bin NOT NULL default ''"
+	'sql'					  => "char(1) NOT NULL default ''"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_dateDirection'] = array
@@ -229,7 +229,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_dateDirection'] = array
 	'options'                 => array('all', 'ltToday', 'leToday', 'geToday', 'gtToday'),
 	'reference'               => &$GLOBALS['TL_LANG']['tl_module']['caledit_dateDirection_ref'],
 	'eval'                    => array('tl_class'=>'w50'),
-	'sql'                     => "varchar(10) COLLATE ascii_bin NOT NULL default ''"
+	'sql'                     => "varchar(10) NOT NULL default ''"
 );
 
 
@@ -242,7 +242,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_dateIncludeCSSTheme'] = array
 	'inputType'               => 'select',
 	'options'                 => array("black-tie", "blitzer", "cupertino", "dark-hive", "dot-luv", "eggplant", "excite-bike", "flick", "hot-sneaks", "humanity", "le-frog", "mint-choc", "overcast", "pepper-grinder", "redmond", "smoothness", "south-street", "start", "sunny", "swanky-purse", "trontastic", "ui-darkness", "ui-lightness", "vader"),
 	'eval'                    => array('tl_class'=>'w50', 'includeBlankOption'=>true),
-	'sql'                     => "varchar(64) COLLATE ascii_bin NOT NULL default 'smoothness'"
+	'sql'                     => "varchar(64) NOT NULL default 'smoothness'"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_dateImage'] = array
@@ -252,7 +252,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_dateImage'] = array
 	'default'                 => '1',
 	'inputType'               => 'checkbox',
 	'eval'                    => array('tl_class'=>'clr'),
-	'sql'                     => "char(1) COLLATE ascii_bin NOT NULL default '1'"
+	'sql'                     => "char(1) NOT NULL default '1'"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['caledit_dateImageSRC'] = array
